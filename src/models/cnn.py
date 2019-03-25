@@ -19,7 +19,7 @@ class Cnn(torch.nn.Module):
         self.pool = torch.nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
 
         # 4608 input features, 64 output features (see sizing flow below)
-        self.fc1 = torch.nn.Linear(6 * (d_in_sqrt/2) * (d_in_sqrt/2), 32)
+        self.fc1 = torch.nn.Linear(6 * int(d_in_sqrt/2) * int(d_in_sqrt/2), 32)
 
         # 64 input features, 10 output features for our 10 defined classes
         self.fc2 = torch.nn.Linear(32, 10)

@@ -19,7 +19,7 @@ inputs, targets = digits.load_data()
 
 
 # initialize model
-model = models.Cnn('CNN', int(inputs.shape[1]), int(targets.max() + 1), device=device)
+model = models.Cnn('CNN', 16, int(targets.max() + 1), device=device)
 
 # make sure model parameters are in GPU memory
 model.cuda()
