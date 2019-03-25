@@ -55,6 +55,8 @@ class TrainClassifier():
             for batch in range(0, int(self.N / batch_size)):
                 # Berechne den Batch
                 batch_x = self.x[batch * batch_size: (batch + 1) * batch_size, :]
+                batch_x = batch_x.reshape(batch_size, 1, 16, 16)
+                
                 batch_y = self.y[batch * batch_size: (batch + 1) * batch_size]
 
                 # Berechne die Vorhersage (foward step)
