@@ -56,7 +56,7 @@ class TrainClassifier():
                 # Berechne den Batch
                 batch_x = self.x[batch * batch_size: (batch + 1) * batch_size, :]
                 batch_x = batch_x.reshape(batch_size, 1, 16, 16)
-                
+
                 batch_y = self.y[batch * batch_size: (batch + 1) * batch_size]
 
                 # Berechne die Vorhersage (foward step)
@@ -73,11 +73,11 @@ class TrainClassifier():
 
             # Berechne den Fehler (Ausgabe des Fehlers alle 50 Iterationen)
             if t % 10 == 0:
-                outputs = self.model(self.x)
+                outputs = self.model(self.x.reshape(batch_size, 1, 16, 16))
                 loss = criterion(outputs, self.y)
                 loss_hist.append(loss.item())
 
-                outputs_val = self.model(self.x_val)
+                outputs_val = self.model(self.x_val.reshape(batch_size, 1, 16, 16))
                 loss_val = criterion(outputs_val, self.y_val)
                 loss_validate_hist.append(loss_val.item())
 
