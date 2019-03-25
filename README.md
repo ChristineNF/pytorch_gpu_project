@@ -1,1 +1,3 @@
-# pytorch_gpu_project
+# Running pytorch on GPUs
+
+## 
