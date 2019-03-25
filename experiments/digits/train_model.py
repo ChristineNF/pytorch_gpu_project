@@ -6,7 +6,7 @@ import train
 
 
 experiment_path = '../../experiments/digits/exp1/'
-data_path = '../../data/digits.train'
+data_path = '../../data/zip.train'
 
 # set device to cuda enabled device (GPU)
 dtype = torch.float
@@ -19,7 +19,7 @@ inputs, targets = digits.load_data()
 
 
 # initialize model
-model = models.LogReg('CNN', int(inputs.shape[1]), int(targets.max() + 1), device=device)
+model = models.Cnn('CNN', int(inputs.shape[1]), int(targets.max() + 1), device=device)
 
 # make sure model parameters are in GPU memory
 model.cuda()

@@ -1,3 +1,3 @@
-from .cnn import CNN
+from .cnn import Cnn
 
-__all__ = ['cnn']
+__all__ = ['Cnn']
