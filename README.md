@@ -14,3 +14,15 @@ Unzip downloaded files:
 unzip zip.train.gz
 unzip zip.test.gz
 ```
+
+Setup environment
+
+Activate preinstalled pytorch environment on aws deeplearning gpu instance 
+```bash
+  source activate pytorch_p36 
+```
+
+In project dir setup project
+```bash
+ python setup.py install --user
+```
